@@ -1,0 +1,216 @@
+.color-background{
+    background-color: blue;
+}
+.myButtonMobile{
+    margin: 0;
+}
+.withoutPaddingForMobile{
+    padding-left:0;
+    padding-right:0}
+.hidden{
+    display: none;
+}
+.fixedBottom{
+    position:fixed;
+    left:0px;
+    bottom:0px;
+}
+.top-bar-modified{
+    background-color: #0175bb;
+}
+.color-back-blue{
+    background-color: #0175bb;
+}
+.color-back-white{
+    background-color: #fff;
+    color: #34495e;
+}
+.color-white{
+    color: #fff;
+}
+.color-dark-blue{
+    color: #34495e;
+}
+.padding-top-menu{
+    padding-top: 61px;
+}
+.capa-menu{
+    z-index: 1;
+}
+.time-title{
+    font-size: 0.8em;
+}
+.time{
+    font-size: 2em;
+    background-color: #fff;
+    border-color: #fff;
+    color: #1261c9;
+}
+.time-content{
+    display: inline-flex;
+}
+
+.time-stop{
+    padding: 3rem;
+    background-color: red;
+}
+.float-left{
+    float:left;
+}
+.float-right{
+    float:right;
+}
+
+#trapezoide {
+    border-bottom: 2rem solid #0175bb;
+    border-left: 0px solid transparent;
+    border-right: 2rem solid transparent;
+    height: 0;
+    width: 2rem;
+    border-top: 4rem solid transparent;
+}
+#trapezoide2 {
+    border-width: 3rem 1rem 1rem 0px;
+    border-style: solid;
+    border-color: transparent transparent #0175bb;
+    height: 0px;
+    width: 1rem;
+}
+.blue{
+    color: #0175bb;
+}
+.blue1{
+    color: #1261c9;
+}
+.red{
+    color: #f45750;
+}
+.red1{
+    color: #b5292a;
+}
+.grey{
+    color: #666666;
+}
+.green{
+    color: #41ab6b;
+}
+.yellow{
+    color: #eea303;
+}
+.red{
+    color: #f06060;
+}
+/**********************/
+.blue-b{
+    background-color: #0175bb;
+}
+.blue1-b{
+    background-color: #1261c9;
+}
+.red-b{
+    background-color: #f45750;
+}
+.red1-b{
+    background-color: #b5292a;
+}
+.grey-b{
+    background-color: #666666;
+}
+.green-b{
+    background-color: #41ab6b;
+}
+.yellow-b{
+    background-color: #eea303;
+}
+.red-b{
+    background-color: #f06060;
+}
+.general-div{
+    border-top:1px solid #0175bb;
+}
+.general-div-rigth{
+    border-right:1px solid #0175bb;
+}
+.general-div-rigth-white{
+    border-right:1px solid #fff;
+}
+/*******************************************/
+#footer {
+    position: relative;
+    margin-top: -150px; /* negative value of footer height */
+    height: 150px;
+    clear:both;
+}
+.heigth-100{
+    height: 100%;
+}
+.heigth-90{
+    height: 90%;
+}
+.heigth-80{
+    height: 80%;
+}
+.heigth-70{
+    height: 70%;
+}
+.heigth-60{
+    height: 60%;
+}
+.heigth-50{
+    height: 50%;
+}
+.heigth-40{
+    height: 40%;
+}
+.heigth-45{
+    height: 45%;
+}
+.heigth-42{
+    height: 42%;
+}
+.heigth-30{
+    height: 30%;
+}
+.heigth-20{
+    height: 20%;
+}
+.heigth-15{
+    height: 15%;
+}
+.heigth-13{
+    height: 13%;
+}
+.heigth-12{
+    height: 12%;
+}
+.heigth-10{
+    height: 10%;
+}
+.full{
+    height: 100%;
+    width: 100%;
+}
+.auto-content{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-top: auto;
+}
+.auto-scroll{
+    overflow:scroll;
+}
+.hide{
+    display: none;
+}
+.button-segmento{
+    padding: 0.5rem 2rem 0.5rem;
+}
+table thead tr th, table thead tr td, table tfoot tr th, table tfoot tr td {
+    padding: 0rem 0.625rem 0rem;
+}
+table tr th, table tr td {
+    padding: 0.5625rem 0.625rem
+}
+table tr th, table tr td .add{
+    padding: 0.5rem 0rem;
+}
