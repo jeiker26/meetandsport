@@ -1,0 +1,202 @@
+@font-face {
+    font-family: "allerBdlt";
+    src: url(../fonts/Aller_BdIt.ttf) format("truetype");
+}
+
+
+body {
+    padding-top: 80px;
+}
+
+.half-unit-fixed-bottom {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border: 1px solid #383737;
+    background-image: url('../assets/img/sep-half.png');
+    background-color: #3d3d3d;
+    color: white;
+    height: 60px;
+}
+.chat-unit{
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border: 1px solid #383737;
+    background-image: url('../img/sep-half.png');
+    background-color: #3d3d3d;
+    color: white;
+    height: 19em;
+}
+
+.cont-fixed-bottom{
+    text-align: center;
+    height: 60px;
+    vertical-align: middle;
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    margin-right: 0px;
+    margin-left: 0px;
+    text-align: center;
+    font-size: 16px;
+    color: #b2c831;
+}
+
+.btn-mobile{
+    height: 60px;
+    border-radius: 0;
+}
+.nav-fixed-top2{
+    height: 40px;
+}
+.mobile-bottom{
+    height: 60px;
+    float: none;
+    display: table-cell;
+    padding-top: 7px;
+}
+.mobile-bottom > a{
+    color: #3d3d3d;
+}
+.check{
+    background-color: #3d3d3d;
+}
+.check > a{
+    color: #b2c831;
+}
+.brand-title{
+    font-family: "allerBdlt";
+    text-align: center;
+    margin-top: 8px;
+    font-size: 23px;
+}
+.a-navbar{
+    margin-top: 4px;
+}
+.icon-navbar-top{
+    position: relative;
+    float: right;
+    padding: 0px;
+    margin-top: 0px;
+    margin-right: 15px;
+    margin-bottom: 0px;
+    background-color: transparent;
+    border: 0px solid transparent;
+}
+.mobile-bottom-midle{
+    height: 60px;
+    float: none;
+    display: table-cell;
+    padding-top: 14px;
+    font-size: 25px;	
+}
+.check-midle > a{
+    color: #C83131;
+}
+.mobile-bottom-play {
+    height: 60px;
+    float: none;
+    display: table-cell;
+    padding-top: 14px;
+    font-size: 25px;
+    background-color: #b2c831;
+}
+.mobile-bottom-play > a{
+    color: #3d3d3d;
+}
+.mobile-bottom-pause{
+    height: 60px;
+    float: none;
+    display: table-cell;
+    padding-top: 14px;
+    font-size: 25px;
+    background-color: rgb(255, 224, 0);
+}
+.mobile-bottom-pause > a{
+    color: #3d3d3d;
+}
+.mobile-bottom-stop{
+    height: 60px;
+    float: none;
+    display: table-cell;
+    padding-top: 14px;
+    font-size: 25px;
+    background-color: #C83131
+}
+.mobile-bottom-stop > a{
+    color: #3d3d3d;
+}
+.icon-top-menu{
+    color: #3d3d3d;
+}
+
+/*ESTRUCTURA DE ICONOS*/
+.framemail .window .mail li .actions {
+    height: 16px;
+    position: absolute;
+    right: 36px;
+    text-align: right;
+    top: 0;
+    width: 200px;
+}
+.framemail .window .mail li .actions img {
+    background: none;
+    display: inline-block;
+    height: 16px;
+    margin-left: 34px;
+    opacity: .1;
+    position: relative;
+    width: 16px;
+}
+
+
+.dash-unit {
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border: 1px solid #383737;
+    background-image: url('../img/sep-half.png');
+    background-color: #3d3d3d;
+    color: white;
+    height: auto;
+}
+.play-unit{
+    margin-bottom: 30px;
+    padding-bottom: 0px;
+    border: 1px solid #383737;
+    background-image: url('../img/sep-half.png');
+    background-color: #3d3d3d;
+    color: white;
+    height: auto;
+}
+.map-unit{
+    /* margin-bottom: 30px; */
+    padding-bottom: 10px;
+    border: 1px solid #383737;
+    background-image: url('../img/sep-half.png');
+    background-color: #3d3d3d;
+    color: white;
+    height: 169px;
+}
+
+.withoutmarginbottom{
+    margin-bottom: 0px;
+}
+.sms-chat{
+    border-radius: 0px;
+}
+.sms-chat-ico{
+    border-radius: 0;
+    top: 0px;
+}
+.chat-sms1{
+    margin-top: 7px;
+    margin-bottom: 7px;
+    margin-left: 60px;
+    color: #383737;
+    opacity: 0.6;
+}
+.chat-sms2{
+    margin-top: 7px;
+    margin-bottom: 7px;
+    margin-right: 60px;
+    color: #383737;
+}
