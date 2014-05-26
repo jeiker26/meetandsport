@@ -5,7 +5,8 @@ app.routers.AppRouter = Backbone.Router.extend({
         "practice":                 "practiceView",
         "calendar":                 "calendarView",
         "rutes":                    "rutesView",
-        "friends":                  "friendsView"
+        "friends":                  "friendsView",
+        "profile":                   "userView"
     },
 
     initialize: function () {
@@ -69,9 +70,9 @@ app.routers.AppRouter = Backbone.Router.extend({
             app.calendarView.delegateEvents(); 
         }
         app.todo.html(app.calendarView.$el);
-        this.menutop();
-        this.menu();
+
         app.menuView.calendar();
+        app.calendarView.initialize();
     },
     
     rutesView: function () {
@@ -83,8 +84,7 @@ app.routers.AppRouter = Backbone.Router.extend({
             app.rutesView.delegateEvents(); 
         }
         app.todo.html(app.rutesView.$el);
-        this.menutop();
-        this.menu();
+
         app.menuView.rutes();
     },
     
@@ -97,8 +97,21 @@ app.routers.AppRouter = Backbone.Router.extend({
             app.friendsView.delegateEvents(); 
         }
         app.todo.html(app.friendsView.$el);
-        this.menutop();
-        this.menu();
+
         app.menuView.friends();
+    },
+    
+    userView: function () {
+         if (!app.userView) {
+            app.userView = new app.views.UserView();
+            app.userView.render();
+        } else {
+            console.log('reusing user view');
+            app.userView.delegateEvents(); 
+        }
+        app.todo.html(app.userView.$el);
+        //app.menuTopView.selectedIcon();
+        app.menuView.reset();
     }
+    
 });

@@ -57,11 +57,17 @@ body {
 .mobile-bottom > a{
     color: #3d3d3d;
 }
+.icon-top-menu{
+    color: #3d3d3d;
+}
 .check{
     background-color: #3d3d3d;
 }
 .check > a{
     color: #b2c831;
+}
+.check-top{
+    color: #C83131;
 }
 .brand-title{
     font-family: "allerBdlt";
@@ -125,9 +131,7 @@ body {
 .mobile-bottom-stop > a{
     color: #3d3d3d;
 }
-.icon-top-menu{
-    color: #3d3d3d;
-}
+
 
 /*ESTRUCTURA DE ICONOS*/
 .framemail .window .mail li .actions {

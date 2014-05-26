@@ -3,10 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Documentos/GitHub/backbone/css/myStyle.css</file>
-            <file>file:/D:/Documentos/GitHub/backbone/index.html</file>
-            <file>file:/D:/Documentos/GitHub/backbone/tpl/FriendsView.html</file>
-            <file>file:/D:/Documentos/GitHub/backbone/tpl/CalendarView.html</file>
+            <file>file:/D:/Documentos/GitHub/meetandsport/js/views/PracticeView.js</file>
+            <file>file:/D:/Documentos/GitHub/meetandsport/js/utils/functionsRutes.js</file>
+            <file>file:/D:/Documentos/GitHub/meetandsport/tpl/PracticeView.html</file>
         </group>
     </open-files>
 </project-private>

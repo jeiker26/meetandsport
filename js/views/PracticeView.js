@@ -29,11 +29,15 @@ app.views.PracticeView = Backbone.View.extend({
         RUTES.hideButton();
     },
     viewmap: function() {
+        $(".butons-midle").children(".check-midle").removeClass("check-midle");
+        $("#view-map").parent().addClass("check-midle");
         $("#map-canvas").removeClass("hide");
         $("#segmentos").addClass("hide");
         RUTES.map();
     },
     viewseg: function() {
+        $(".butons-midle").children(".check-midle").removeClass("check-midle");
+        $("#view-seg").parent().addClass("check-midle");
         $("#map-canvas").addClass("hide");
         $("#segmentos").removeClass("hide");
     },

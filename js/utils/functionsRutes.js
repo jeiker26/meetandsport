@@ -18,8 +18,8 @@
     var x = !x;
 
     var cronometro;
-    var contador_s = 0, contador_m = 0;
-    var aux_contador_m = 0, aux_contador_s = 0;
+    var contador_s = 0, contador_m = 0, contador_h = 0, contador_ml = 0;
+    var aux_contador_m = 0, aux_contador_s = 0, aux_contador_h = 0, aux_contador_ml = 0;
 
     function pausef()
     {
@@ -41,15 +41,22 @@
     {
         cronometro = setInterval(
                 function() {
-                    console.log(1);
-                    if (contador_s == 60)
+                    if (contador_ml == 60)
                     {
-                        contador_s = 00;
-                        contador_m++;
+                        contador_ml = 00;
+                        contador_s++;
 
-                        if (contador_m == 60)
+                        if (contador_s == 60)
                         {
-                            contador_m = 00;
+                            contador_s = 00;
+                            contador_m++;
+
+                            if (contador_m == 60)
+                            {
+                                contador_m = 00;
+                                contador_h++;
+                                
+                            }
                         }
                     }
 
@@ -67,13 +74,31 @@
                     else {
                         aux_contador_m = contador_m;
                     }
-                    $("#time-rutes").text("00" + " : " + aux_contador_m + " : " + aux_contador_s);
+                    
+                    if (contador_h < 10)
+                    {
+                        aux_contador_h = "0" + contador_h;
+                    }
+                    else {
+                        aux_contador_h = contador_h;
+                    }
+                    
+                    if (contador_ml < 10)
+                    {
+                        aux_contador_ml = "0" + contador_ml;
+                    }
+                    else {
+                        aux_contador_ml = contador_ml;
+                    }
+
+
+                    $("#time-rutes").text(aux_contador_h + ":" + aux_contador_m + ":" + aux_contador_s + ":" + aux_contador_ml);
                     //button_chronometer.append("<i class='sprite sprite-conometro-dark-blue float-right'></i>");
-                    contador_s++;
+                    contador_ml++;
                     $("#distance").text(distanceTotal + " m");
                     $("#promedio").text(((distanceTotal) / (((contador_m * 60) + aux_contador_s))) + " m/s");
                 }
-        , 1000);
+        , 16.6666667);
 
     }
 
