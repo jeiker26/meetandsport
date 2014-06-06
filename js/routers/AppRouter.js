@@ -6,13 +6,16 @@ app.routers.AppRouter = Backbone.Router.extend({
         "calendar":                 "calendarView",
         "rutes":                    "rutesView",
         "friends":                  "friendsView",
-        "profile":                   "userView"
+        "profile":                  "userView",
+        "calen/:day":               "calendarDay",
+        "map":                      "map"
     },
 
     initialize: function () {
         app.todo = $('#todo');
         app.menu = $('#menu');
         app.menuTop = $('#menuTop');
+        app.contentDay = $('#content-day');
     },
 
     home: function () {
@@ -111,7 +114,31 @@ app.routers.AppRouter = Backbone.Router.extend({
         }
         app.todo.html(app.userView.$el);
         //app.menuTopView.selectedIcon();
+        app.userView.checkUser();
         app.menuView.reset();
+    },
+    map: function () {
+         if (!app.mapView) {
+            app.mapView = new app.views.MapView();
+            app.mapView.render();
+        } else {
+            console.log('reusing map view');
+            app.mapView.delegateEvents(); 
+        }
+        app.todo.html(app.mapView.$el);
+        //app.menuTopView.selectedIcon();
+        app.menuView.map();
+        app.mapView.map();
+    },
+    calendarDay: function(){
+        if (!app.calendarDay) {
+            app.calendarDay = new app.views.CalendarDay();
+            app.calendarDay.render();
+        } else {
+            console.log('reusing calendarDay view');
+            app.calendarDay.delegateEvents(); 
+        }
+        app.contentDay.html(app.calendarDay.$el);
     }
     
 });

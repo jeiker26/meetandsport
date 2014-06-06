@@ -24,6 +24,10 @@ app.views.MenuView = Backbone.View.extend({
     friends: function(){
         this.reset();
         $('#menu-friends').addClass("check");
+    },
+    map: function(){
+        this.reset();
+        $('#menu-map').addClass("check");
     }
 
 });

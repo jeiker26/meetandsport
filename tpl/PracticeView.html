@@ -9,7 +9,7 @@
             <div class="half-unit withoutmarginbottom">
                 <div class="cont">
                     <p><bold id="time-rutes">00:00:00:00</bold></p>
-                    <p><img src="./lib/bootstrap/img/up-small.png" alt="">&nbsp<span id="distance"> 000 m.</span>&nbsp | &nbsp<img src="./lib/bootstrap/img/down-small.png" alt="">&nbsp<span id="promedio"> 000 Min.</span></p>
+                <p><img src="./lib/bootstrap/img/up-small.png" alt="">&nbsp<span id="distance"> 000 </span> m.&nbsp | &nbsp<img src="./lib/bootstrap/img/down-small.png" alt="">&nbsp<span id="promedio"> 000 </span> M/s<span id="content-altitude" class="hide">&nbsp | &nbsp<img src="./lib/bootstrap/img/down-small.png" alt="">&nbsp<span id="altitude"> 000 </span>m.</span></p>
                 </div>
             </div>
 
@@ -37,34 +37,23 @@
             </div>
 
             <!-- MAIL BLOCK -->
-            <div class="dash-unit">
+            <div class="dash-unit practiceExt hide">
                 <div class="row cont-fixed-bottom butons-midle">
-                    <div class="col-xs-4 mobile-bottom-midle check-midle">
+                    <div class="col-xs-6 mobile-bottom-midle check-midle">
                         <a class="a-navbar" id="view-seg">
                             <span class="glyphicon glyphicon-list-alt"></span><br>
                         </a>
                     </div>
-                    <div class="col-xs-4 mobile-bottom-midle">
-                        <a class="a-navbar" id="view-map">
-                            <span class="glyphicon glyphicon-map-marker"></span><br>
-                        </a>
-                    </div>
-                    <div class="col-xs-4 mobile-bottom-midle">
-                        <a class="a-navbar">
+                    <div class="col-xs-6 mobile-bottom-midle">
+                        <a class="a-navbar" id="view-chart">
                             <span class="glyphicon glyphicon-stats"></span><br>
                         </a>
                     </div>
                 </div>
                 <hr>
                 <!-- GRAPH CHART - lineandbars.js file -->     
-                <div class="section-graph hide">
-                    <div id="importantchart"></div>
-                    <br>
-                    <div class="graph-info">
-                        <i class="graph-arrow"></i>
-                        <span class="graph-info-big">634.39</span>
-                        <span class="graph-info-small">+2.18 (3.71%)</span>
-                    </div>
+                <div class="section-graph hide" id="chart">
+                    <canvas id="importantchart"></canvas>
                 </div>
 
                 <div class="map-unit hide" id="map-canvas">
@@ -85,13 +74,11 @@
                             
                             <li>
                                 <i class="read"></i>
-                                <img class="avatar" src="assets/img/photo03.jpg" alt="avatar">
-                                <p class="sender">3.25KM</p>
-                                <div class="actions">
-                                    <a><img src="http://png-1.findicons.com/files//icons/2232/wireframe_mono/16/undo.png" alt="reply"></a>
-                                    <a><img src="http://png-1.findicons.com/files//icons/2232/wireframe_mono/16/star_fav.png" alt="favourite"></a>
-                                    <a><img src="http://png-4.findicons.com/files//icons/2232/wireframe_mono/16/tag.png" alt="label"></a>
-                                    <a><img src="http://png-4.findicons.com/files//icons/2232/wireframe_mono/16/trash.png" alt="delete"></a>
+                                <p class="sender">2.25KM</p>
+                                <div class="row">
+                                    <div class="col-xs-4"><p>Tiempo</p></div>
+                                    <div class="col-xs-4"><p>Distancia</p></div>
+                                    <div class="col-xs-4"><p>Velocidad</p></div>
                                 </div>
                             </li>
                             <li>
