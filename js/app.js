@@ -3,7 +3,8 @@ var app = {
     models: {},
     routers: {},
     utils: {},
-    adapters: {}
+    adapters: {},
+    user: {}
 };
 
 $(document).on("ready", function () {
