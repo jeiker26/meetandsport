@@ -30,6 +30,7 @@ app.views.HomeView = Backbone.View.extend({
                     app.user = data;
                     alert("ok");
                     alert(app.user.name);
+                    alert(app.user._id);
                     app.router.navigate('practice', {trigger: true});
                 }).fail(function() {
                     console.log("error add USER ");

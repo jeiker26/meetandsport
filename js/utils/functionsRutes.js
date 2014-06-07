@@ -1,17 +1,15 @@
 (function() {
     var root = this;
-
     var play = $("#play");
     var stop = $("#stop");
     var pause = $("#pause");
     var rut_position = [];
     var distanceTotal = 0;
     var pos = false;
-
     var cronometro;
     var contador_s = 0, contador_m = 0, contador_h = 0, contador_ml = 0;
     var aux_contador_m = 0, aux_contador_s = 0, aux_contador_h = 0, aux_contador_ml = 0;
-
+    var dataSession;
     /*Cronometro*/
     function reset()
     {
@@ -21,6 +19,9 @@
         contador_s = 00;
         contador_m = 00;
         contador_h = 00;
+        distanceTotal = 00;
+        $("#distance").text(distanceTotal);
+        $("#promedio").text(0);
     }
 
     function pausa() {
@@ -36,17 +37,14 @@
                     {
                         contador_ml = 00;
                         contador_s++;
-
                         if (contador_s == 60)
                         {
                             contador_s = 00;
                             contador_m++;
-
                             if (contador_m == 60)
                             {
                                 contador_m = 00;
                                 contador_h++;
-
                             }
                         }
                     }
@@ -82,12 +80,17 @@
                         aux_contador_ml = contador_ml;
                     }
 
-
+                    var promedio = ((distanceTotal) / (((contador_m * 60) + aux_contador_s))).toFixed(2);
                     $("#time-rutes").text(aux_contador_h + ":" + aux_contador_m + ":" + aux_contador_s + ":" + aux_contador_ml);
                     //button_chronometer.append("<i class='sprite sprite-conometro-dark-blue float-right'></i>");
                     contador_ml++;
                     $("#distance").text(distanceTotal);
-                    $("#promedio").text(((distanceTotal) / (((contador_m * 60) + aux_contador_s))));
+                    $("#promedio").text(promedio);
+                    dataSession = {
+                        "time": aux_contador_h + ":" + aux_contador_m + ":" + aux_contador_s + ":" + aux_contador_ml,
+                        "average": promedio,
+                        "distance": distanceTotal
+                    };
                 }
         , 16.6666667);
     }
@@ -99,7 +102,6 @@
             distanceTotal = distanceTotal + Dist(pos.lat, pos.long, position.coords.latitude, position.coords.longitude);
         }
         pos = {"lat": position.coords.latitude, "long": position.coords.longitude};
-
         rut_position.push(pos);
         $("#distance").text(distanceTotal);
         $("#promedio").text(Math.round(((distanceTotal) / (((contador_m * 60) + aux_contador_s)))));
@@ -107,10 +109,12 @@
             $("#content-altitude").removeClass("hide");
             $("#altitude").text(position.coords.altitude);
         }
-        //$("#speed").text(position.coords.speed);
-        setTimeout(loop, 4000);
+        if (position.coords.speed) {
+            $("#speed").text(position.coords.speed);
+            $("#content-speed").removeClass("hide");
+        }
+        setTimeout(loop, 10000);
     };
-
     function onError(error) {
         alert('code: ' + error.code + '\n' +
                 'message: ' + error.message + '\n');
@@ -118,7 +122,7 @@
 
     function loop(pause) {
         if (!pause) {
-            navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: 2000, timeout: 5000, enableHighAccuracy: true});
+            navigator.geolocation.getCurrentPosition(onSuccess, onError, {maximumAge: 2000, timeout: 15000, enableHighAccuracy: true});
         }
     }
 
@@ -128,21 +132,19 @@
             return x * Math.PI / 180;
         }
 
-        var R = 6378.137;                          //Radio de la tierra en km
+        var R = 6378.137; //Radio de la tierra en km
         var dLat = rad(lat2 - lat1);
         var dLong = rad(lon2 - lon1);
-
         var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(rad(lat1)) * Math.cos(rad(lat2)) * Math.sin(dLong / 2) * Math.sin(dLong / 2);
         var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
         var d = R * c;
-
-        return Math.round(d * 1000);                      //Retorna tres decimales
+        return Math.round(d * 1000); //Retorna tres decimales
     }
 
 
     /*Fin GPS*/
-    
-    
+
+
     function getArrayPositions() {
         return rut_position;
     }
@@ -156,6 +158,9 @@
         $("#play").parent().parent().removeClass("hide");
     }
 
+    function getDataSession() {
+        return dataSession;
+    }
     if (!root.RUTES) {
         root.RUTES = {};
     }
@@ -167,6 +172,5 @@
     root.RUTES.getArrayPositions = getArrayPositions;
     root.RUTES.pausa = pausa;
     root.RUTES.getPos = getPos;
-
-
+    root.RUTES.getDataSession = getDataSession;
 }).call(this);

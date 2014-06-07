@@ -6,13 +6,16 @@ app.views.PracticeView = Backbone.View.extend({
         this.$el.html(this.template());
         return this;
     },
+    
+    session: null,
     events: {
         "click #play": "play",
         "click #stop": "stop",
         "click #pause": "pause",
         "click #view-seg": "viewseg",
         "click #add-seg": "addSeg",
-        "click #view-chart": "viewchart"
+        "click #view-chart": "viewchart",
+        "click #saveSession": "saveSession"
     },
     play: function() {
         setTimeout(RUTES.loop, 1000);
@@ -22,6 +25,10 @@ app.views.PracticeView = Backbone.View.extend({
     },
     stop: function() {
         RUTES.pausa();
+        this.session = RUTES.getDataSession();
+        $("#time-session").text(this.session.time);
+        $("#distance-session").text(this.session.distance);
+        $("#average-session").text(this.session.average);
         RUTES.reset();
         RUTES.hideButton();
     },
@@ -118,6 +125,28 @@ app.views.PracticeView = Backbone.View.extend({
     },
     addSeg: function() {
         RUTES.addSeg();
+    },
+    saveSession: function() {
+        console.log(this.session);
+        $.ajax({
+            type: 'POST',
+            url: 'http://meetserver-jeikersport.rhcloud.com/addRute',
+            dataType: 'json',
+            data: {
+                user: app.user._id,
+                info: [
+                    this.session.time,
+                    this.session.average,
+                    this.session.distance,
+                ],
+                rutes: "puntos"
+            }
+        }).done(function(data) {
+            console.log(data);
+            $('#myModal').modal('toggle');
+        }).fail(function() {
+            console.log("error save rute ");
+        });
     }
 
 });

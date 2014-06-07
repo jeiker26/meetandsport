@@ -52,6 +52,29 @@ app.views.CalendarView = Backbone.View.extend({
     render: function() {
         this.$el.html(this.template());
         return this;
+    },
+    mySessions: function(){
+        $.ajax({
+            type: 'GET',
+            url: 'http://meetserver-jeikersport.rhcloud.com/allRutes',
+            dataType: 'json',
+            /*data: {
+                user: app.user._id,
+                info: [
+                    this.session.time,
+                    this.session.average,
+                    this.session.distance,
+                ],
+                rutes: "puntos"
+            }*/
+        }).done(function(data) {
+            
+            for(var i = 0; i < data.length;i++){
+                $("#list").append("<li>"+data[i].info+" user: "+ data[i].user+"</li>");
+            }
+        }).fail(function() {
+            console.log("error save rute ");
+        });
     }
 
 });

@@ -9,7 +9,7 @@
             <div class="half-unit withoutmarginbottom">
                 <div class="cont">
                     <p><bold id="time-rutes">00:00:00:00</bold></p>
-                <p><img src="./lib/bootstrap/img/up-small.png" alt="">&nbsp<span id="distance"> 000 </span> m.&nbsp | &nbsp<img src="./lib/bootstrap/img/down-small.png" alt="">&nbsp<span id="promedio"> 000 </span> M/s<span id="content-altitude" class="hide">&nbsp | &nbsp<img src="./lib/bootstrap/img/down-small.png" alt="">&nbsp<span id="altitude"> 000 </span>m.</span></p>
+                    <p><span id="content-speed" class="hide"><img src="./lib/bootstrap/img/up-small.png" alt="">&nbsp<span id="speed"> 000 </span> vel.&nbsp | &nbsp</span><img src="./lib/bootstrap/img/up-small.png" alt="">&nbsp<span id="distance"> 000 </span> m.&nbsp | &nbsp<img src="./lib/bootstrap/img/down-small.png" alt="">&nbsp<span id="promedio"> 000 </span> M/s<span id="content-altitude" class="hide">&nbsp | &nbsp<img src="./lib/bootstrap/img/down-small.png" alt="">&nbsp<span id="altitude"> 000 </span>m.</span></p>
                 </div>
             </div>
 
@@ -71,7 +71,7 @@
                                     <p class="sender">Añadir nuevo segmento</p>
                             </li>
                             </a>
-                            
+
                             <li>
                                 <i class="read"></i>
                                 <p class="sender">2.25KM</p>
@@ -111,12 +111,20 @@
                 <h4 class="modal-title">Información sesión</h4>
             </div>
             <div class="modal-body">
-                ...
+                <p>Duración de la sesión: <span id="time-session"></span></p>
+                <p>Distancia de la sesión: <span id="distance-session"></span></p>
+                <p>Velocidad<small>(metros/segundo)</small>: <span id="average-session"></span></p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Descartar</button>
-                <button type="button" class="btn btn-primary">Guardar sesión</button>
+                <div class="row">
+                    <div class="col-xs-3 mobile-bottom button-modal" >
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Descartar</button>
+                    </div>
+                    <div class="col-xs-3 mobile-bottom button-modal">
+                        <button type="button" class="btn save" id="saveSession">Guardar sesión</button>
+                    </div>
+                </div>
             </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
+        </div>
+    </div>
 </div>

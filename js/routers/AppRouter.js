@@ -1,5 +1,4 @@
 app.routers.AppRouter = Backbone.Router.extend({
-
     routes: {
         "":                         "home",
         "practice":                 "practiceView",
@@ -76,6 +75,7 @@ app.routers.AppRouter = Backbone.Router.extend({
 
         app.menuView.calendar();
         app.calendarView.initialize();
+        app.calendarView.mySessions();
     },
     
     rutesView: function () {
