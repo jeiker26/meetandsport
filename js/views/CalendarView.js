@@ -54,23 +54,18 @@ app.views.CalendarView = Backbone.View.extend({
         return this;
     },
     mySessions: function(){
+        $(".mail").html("");
         $.ajax({
             type: 'GET',
-            url: 'http://meetserver-jeikersport.rhcloud.com/allRutes',
+            url: 'http://meetserver-jeikersport.rhcloud.com/findRute/' + app.user._id,
             dataType: 'json',
-            /*data: {
-                user: app.user._id,
-                info: [
-                    this.session.time,
-                    this.session.average,
-                    this.session.distance,
-                ],
-                rutes: "puntos"
-            }*/
         }).done(function(data) {
-            
-            for(var i = 0; i < data.length;i++){
-                $("#list").append("<li>"+data[i].info+" user: "+ data[i].user+"</li>");
+            if(data.length){
+                for (var i = 0; i < data.length; i++) {
+                    $(".mail").append("<li><i class='unread'></i><img class='avatar' src='assets/img/photo01.jpeg' alt='avatar'><p class='sender'>" + data[i].info + "</p><p class='message'><strong>Working</strong>" + data[i].user + "</p><div class='actions'><a><img src='http://png-1.findicons.com/files//icons/2232/wireframe_mono/16/undo.png' alt='reply'></a><a><img src='http://png-1.findicons.com/files//icons/2232/wireframe_mono/16/star_fav.png' alt='favourite'></a><a><img src='http://png-4.findicons.com/files//icons/2232/wireframe_mono/16/tag.png' alt='label'></a><a><img src='http://png-4.findicons.com/files//icons/2232/wireframe_mono/16/trash.png' alt='delete'></a></div></li>")
+                }
+            }else{
+                $(".mail").append("<li><a href='#/practice'><i class='unread'></i><p class='sender'>No has añadido ninguna sesion</p></a></li>");
             }
         }).fail(function() {
             console.log("error save rute ");

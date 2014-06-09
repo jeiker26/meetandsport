@@ -360,6 +360,7 @@ digiclock {
     margin-top: -1px;
     overflow: hidden;
     margin-left: -18px;
+    /* padding-bottom: 50px; */
 }
 .framemail .window .mail li {
     background-color:#3d3d3d;

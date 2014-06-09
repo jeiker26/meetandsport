@@ -6,6 +6,9 @@ app.views.MenuView = Backbone.View.extend({
         this.$el.html(this.template());
         return this;
     },
+    playClock: function(){
+      RUTES.clock();  
+    },
     reset: function(){
         $("#content-menu").children().removeClass("check");
     },
@@ -28,6 +31,12 @@ app.views.MenuView = Backbone.View.extend({
     map: function(){
         this.reset();
         $('#menu-map').addClass("check");
+    },
+    withOutUser: function (){
+        $('#menu-calendar').addClass("hide");
+        //$('#menu-friends').addClass("hide");
+        $('#menu-calendar-block').removeClass("hide");
+        //$('#menu-friends-block').removeClass("hide");
     }
 
 });

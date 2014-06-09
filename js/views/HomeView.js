@@ -1,6 +1,10 @@
 app.views.HomeView = Backbone.View.extend({
     initialize: function() {
-
+        var user = JSON.parse(window.localStorage.getItem("user"));
+        if (user) {
+            app.user = user;
+            app.router.navigate('practice', {trigger: true});
+        }
     },
     render: function() {
         this.$el.html(this.template());
@@ -11,10 +15,10 @@ app.views.HomeView = Backbone.View.extend({
     },
     loginFB: function() {
         FB.login(function(data) {
-            alert(data);
-            alert(data.name);
+            var idFacebook = data.id;
+
             userAdd(data);
-            
+
             function userAdd(datos) {
                 $.ajax({
                     type: 'POST',
@@ -28,9 +32,8 @@ app.views.HomeView = Backbone.View.extend({
                     }
                 }).done(function(data) {
                     app.user = data;
-                    alert("ok");
-                    alert(app.user.name);
-                    alert(app.user._id);
+                    app.user.facebookId = idFacebook;
+                    window.localStorage.setItem("user", JSON.stringify(app.user));
                     app.router.navigate('practice', {trigger: true});
                 }).fail(function() {
                     console.log("error add USER ");
